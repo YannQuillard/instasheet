@@ -1,8 +1,8 @@
 require('dotenv').config();
 const axios = require('axios');
 
-const token = process.env.LONG_TOKEN;
-const baseUrl = process.env.BASE_URL;
+const token = process.env.IG_LONG_TOKEN;
+const baseUrl = process.env.IG_BASE_URL;
 
 module.exports = {
     getUserMedia: async () => {
@@ -15,8 +15,8 @@ module.exports = {
                     'Authorization': `Bearer ${token}`
                 }
             })
-            return response.data;
-            console.log(response.data)
+
+            return response.data.data;
         }
         catch (error) {
             console.log(error);
